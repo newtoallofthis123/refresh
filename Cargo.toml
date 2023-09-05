@@ -1,9 +1,9 @@
 [package]
-name = "refresh"
+name = "refrsh"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-keywords = ["refresh", "hot reload", "rust", "cli"]
+keywords = ["reload", "rust", "cli"]
 readme = "README.md"
 authors = ["Ishan Joshi <noobscience@duck.com>"]
 description = "A Simple Hot Reload Application for your apps"
