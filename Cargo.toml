@@ -2,6 +2,12 @@
 name = "refresh"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+keywords = ["refresh", "hot reload", "rust", "cli"]
+readme = "README.md"
+authors = ["Ishan Joshi <noobscience@duck.com>"]
+description = "A Simple Hot Reload Application for your apps"
+repository = "https://github.com/newtoallofthis123/refresh"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
