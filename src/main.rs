@@ -14,6 +14,7 @@ mod utils;
 mod handler;
 
 fn main() {
+    human_panic::setup_panic!();
     utils::print_splash();
     let args = Args::parse();
     let dir = args.dir.unwrap_or(".".to_string());

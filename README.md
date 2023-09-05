@@ -48,12 +48,12 @@ For example, the rust handler looks like this:
 
 ```rust
 fn handle_cargo(){
-    bunt::println!("Building...");
-    let _ = std::process::Command::new("cargo")
-        .arg("build")
-        .output()
-        .expect("Failed to build");
-    bunt::println!("{$green}Build Successful{/$}");
+ bunt::println!("Building...");
+ let _ = std::process::Command::new("cargo")
+  .arg("build")
+  .output()
+  .expect("Failed to build");
+ bunt::println!("{$green}Build Successful{/$}");
 }
 ```
 
