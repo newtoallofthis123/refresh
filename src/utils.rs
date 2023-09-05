@@ -26,7 +26,6 @@ pub fn display_file_name(filepath: &std::path::Path) -> String {
     let last_parent = filepath.components().rev().nth(1).unwrap().as_os_str().to_str().unwrap();
     let file_name = filepath.file_name().unwrap();
     let file = format!("{}/{}", last_parent, file_name.to_str().unwrap());
-    println!("File Name: {}", file);
     file.to_string()
 }
 
@@ -64,6 +63,24 @@ pub fn does_dir_exist(path: &str) -> bool {
     dir
 }
 
+pub fn get_ignore_files()->Vec<String>{
+    let mut ignore_files = Vec::new();
+    if std::path::Path::new(".gitignore").exists(){
+        let file = std::fs::read_to_string(".gitignore").unwrap();
+        let file = file.split("\n").collect::<Vec<&str>>();
+        for line in file{
+            if !line.is_empty(){
+                ignore_files.push(line.to_string());
+            }
+        }
+    }
+    ignore_files
+}
+
+pub fn open_webpage(url: &str) {
+    let _ = webbrowser::open(url);
+}
+
 pub fn print_splash() {
     bunt::println!("{$cyan}    ____       ____               __  {/$}");
     bunt::println!("{$yellow}   / __ \\___  / __/_______  _____/ /_ {/$}");
@@ -71,4 +88,11 @@ pub fn print_splash() {
     bunt::println!("{$yellow} / _, _/  __/ __/ /  /  __(__  ) / / /{/$}");
     bunt::println!("{$cyan}/_/ |_|\\___/_/ /_/   \\___/____/_/ /_/ {/$}");
     println!("                                      ");
+}
+
+pub fn display_output(output: &str){
+    bunt::println!("Output:");
+    bunt::println!("---------");
+    println!("{}", output.trim());
+    bunt::println!("---------");
 }
