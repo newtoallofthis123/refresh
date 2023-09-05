@@ -19,13 +19,13 @@ Other than that, you can free to contribute and add support for your own languag
 For now, using refresh is very simple. Just install it using cargo:
 
 ```bash
-cargo install refresh
+cargo install refrsh
 ```
 
 And then run it in your project directory:
 
 ```bash
-refresh <dir>
+refrsh <dir>
 ```
 
 Where `<dir>` is the directory you want to watch for changes. If you don't specify a directory, it will watch the current directory.
